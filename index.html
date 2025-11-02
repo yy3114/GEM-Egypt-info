@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大埃及博物館：完整指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 設置 Inter 字體 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* 為了美觀，為卡片添加背景圖片和覆蓋層 - 模擬金字塔近景 */
+        .gem-card {
+            background-image: url('https://placehold.co/800x600/374151/ffffff?text=GEM+Near+Pyramids');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(31, 41, 55, 0.95) 0%, rgba(31, 41, 55, 0.6) 50%, rgba(31, 41, 55, 0.3) 100%);
+        }
+        /* 自定義箭頭圖標 */
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        .rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+<div class="gem-card w-11/12 max-w-3xl mx-auto rounded-xl p-0 transition-all duration-500 ease-in-out">
+    <div class="overlay z-10"></div>
+    
+    <!-- 頂部標題和開幕日期 -->
+    <header class="p-6 md:p-10 text-white z-20 relative">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-1 tracking-tight text-amber-300">大埃及博物館（GEM）</h1>
+        <p class="text-lg md:text-xl font-light opacity-90">全球最大單一文明考古博物館</p>
+        <div class="mt-4 p-4 bg-amber-500 rounded-xl inline-block shadow-lg">
+            <p class="text-sm font-semibold text-gray-900 uppercase">官方開幕 & 公眾全面開放</p>
+            <p class="text-xl font-bold text-gray-900">典禮: 11月1日 | 公眾: 11月4日</p>
+        </div>
+    </header>
+
+    <!-- 底部內容區域 -->
+    <div class="p-6 md:p-10 pt-4 bg-white z-20 relative rounded-t-xl shadow-2xl">
+        
+        <!-- 1. 核心資訊 -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 border-b-2 border-amber-500 pb-2 mb-4">🏛️ 核心資訊與規模</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-lg">地點與規模</p>
+                    <ul class="list-disc pl-5 text-sm space-y-1 mt-1">
+                        <li>距離吉薩金字塔群僅約2公里。</li>
+                        <li>佔地約50萬平方米，是世界最大單一文明主題博物館。</li>
+                        <li>收藏文物超過10萬件。</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-lg">設計師</p>
+                    <p class="text-sm mt-1">由愛爾蘭 **Heneghan Peng Architects** 事務所設計。</p>
+                    <p class="text-sm font-bold text-indigo-600 mt-1">聯合創始人：彭士佛 (Shih-Fu Peng)，台裔建築師。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 展覽亮點 -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 border-b-2 border-amber-500 pb-2 mb-4">🌟 必看展覽亮點</h2>
+            <ul class="space-y-3">
+                <li class="p-3 bg-blue-50/50 rounded-lg shadow-sm border-l-4 border-blue-600">
+                    <p class="font-semibold text-gray-900">圖坦卡門珍藏首次完整亮相</p>
+                    <p class="text-sm text-gray-700">歷史上首次將圖坦卡門墓中**超過5,000件文物**完整展出，包括著名的黃金面具。</p>
+                </li>
+                <li class="p-3 bg-blue-50/50 rounded-lg shadow-sm border-l-4 border-blue-600">
+                    <p class="font-semibold text-gray-900">拉美西斯二世巨像</p>
+                    <p class="text-sm text-gray-700">高達11米、重達83噸的巨像矗立在入口大廳，迎賓鎮館。</p>
+                </li>
+                <li class="p-3 bg-blue-50/50 rounded-lg shadow-sm border-l-4 border-blue-600">
+                    <p class="font-semibold text-gray-900">胡夫太陽船</p>
+                    <p class="text-sm text-gray-700">已遷入新館，將在專門的太陽船館（Solar Boat Gallery）亮相。</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 3. 彭士佛的設計哲學 (可摺疊區塊) -->
+        <section>
+            <!-- 摺疊按鈕 -->
+            <button id="toggleButton" class="w-full text-left flex justify-between items-center py-2 -mt-2 mb-4 transition-all duration-300 rounded-lg hover:bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-900">📐 設計理念：中庸之道與生死觀</h2>
+                <svg id="chevronIcon" class="chevron w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+
+            <!-- 摺疊內容 -->
+            <div id="content" class="transition-all duration-500 ease-in-out overflow-hidden max-h-0">
+                <div class="space-y-4 text-gray-700 p-4 border rounded-lg bg-gray-50">
+                    <p class="text-lg font-semibold text-indigo-700">核心概念：連接死亡與生命</p>
+                    <p class="text-sm">設計靈感來自於博物館位置，介於象徵**「死亡與過去」的金字塔高原**和代表**「生命與現在」的尼羅河平原**之間。彭士佛先生以**「中庸之道」**來設計，使博物館成為一個活化的空間，融合了內外、古今。</p>
+                    
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li>
+                            <span class="font-semibold text-gray-900">空間敘事：</span> 參觀動線被設計成從「冥界」通往「來世」的旅程。
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">大階梯的隱喻：</span> 訪客沿著大階梯上升，象徵從出生走向死亡。頂層的落地窗將視線引導向金字塔，形成站在生死交關點的沉思體驗。
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">建築立面：</span> 採用半透明的三角形雪花石膏板，呼應金字塔的幾何形狀，同時調節自然光線。
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-900">綠建築：</span> 獲得 **EDGE Advance** 認證，是非洲和中東地區首座綠色博物館。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://visit-gem.com/" target="_blank" class="block text-center mt-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition duration-200 font-bold tracking-wider">
+            前往大埃及博物館官方網站
+        </a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('toggleButton');
+        const content = document.getElementById('content');
+        const chevronIcon = document.getElementById('chevronIcon');
+
+        let isExpanded = false;
+
+        const toggleContent = () => {
+            isExpanded = !isExpanded;
+
+            if (isExpanded) {
+                // 展開內容
+                content.style.maxHeight = content.scrollHeight + 30 + 'px'; // 增加額外高度避免內容被截斷
+                chevronIcon.classList.add('rotated');
+            } else {
+                // 收起內容
+                content.style.maxHeight = '0';
+                chevronIcon.classList.remove('rotated');
+            }
+        };
+
+        toggleButton.addEventListener('click', toggleContent);
+        
+        // 確保在屏幕尺寸變化時，maxHeight 能夠適應內容
+        window.addEventListener('resize', () => {
+            if (isExpanded) {
+                content.style.maxHeight = content.scrollHeight + 30 + 'px';
+            }
+        });
+        
+        // 首次加載時，讓設計理念區塊自動展開
+        isExpanded = true; 
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+        chevronIcon.classList.add('rotated');
+    });
+</script>
+
+</body>
+</html>
+
